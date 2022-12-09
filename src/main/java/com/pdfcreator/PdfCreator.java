@@ -23,6 +23,7 @@ public class PdfCreator {
     public static PdfFont ITALIC;
     public static PdfFont BOLD_ITALIC;
     public Integer nowIndent;
+    public final float defaultIndent = 10;
 
     private final File orig;
     private final File dest;
@@ -102,7 +103,7 @@ public class PdfCreator {
     public void render(ArrayList<InElement> InContent, Document document){
         int count=0;
         while(count<InContent.size()){
-            Paragraph para = new Paragraph();
+            Paragraph para = new Paragraph().setMarginLeft(defaultIndent).setMarginRight(defaultIndent);
             while(count<InContent.size()){
                 int nextcount=findNextText(count,InContent);
                 Text text = new Text(InContent.get(nextcount).getContent()).setFont(NORMAL);
@@ -170,7 +171,8 @@ public class PdfCreator {
             else {
                 nowIndent-=indent;
             }
-            paragraph.setMarginLeft(nowIndent*10);
+            paragraph.setMarginLeft(defaultIndent+nowIndent*10);
+            paragraph.setMarginRight(defaultIndent);
         }
     }
 }
