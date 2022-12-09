@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f9184cd-48de-4af3-a83f-ed526ad10f63" name="Changes" comment="resolved indentation problem with default margin and setmargin">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Input/filein.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Input/filein.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/result.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Output/result.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdfcreator/PdfCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdfcreator/PdfCreator.java" afterDir="false" />
+    <list default="true" id="7f9184cd-48de-4af3-a83f-ed526ad10f63" name="Changes" comment="Reformatted code&#10;Keep track of current font and current font size">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670624904632</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Reformatted code&#10;Keep track of current font and current font size">
+      <created>1670628732296</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670628732296</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,6 +126,7 @@
     <MESSAGE value="README FILE added assumptions" />
     <MESSAGE value="Modified readin function to cope with assumptions specified in the README file" />
     <MESSAGE value="resolved indentation problem with default margin and setmargin" />
-    <option name="LAST_COMMIT_MESSAGE" value="resolved indentation problem with default margin and setmargin" />
+    <MESSAGE value="Reformatted code&#10;Keep track of current font and current font size" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reformatted code&#10;Keep track of current font and current font size" />
   </component>
 </project>
