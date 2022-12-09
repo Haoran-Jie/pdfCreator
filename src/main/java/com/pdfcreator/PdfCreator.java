@@ -24,8 +24,8 @@ public class PdfCreator {
     public static PdfFont BOLD_ITALIC;
     public Integer nowIndent;
 
-    private File orig;
-    private File dest;
+    private final File orig;
+    private final File dest;
     public PdfCreator(String dest, String orig) throws IOException {
         this.dest = new File(dest);
         this.orig = new File(orig);
@@ -60,6 +60,43 @@ public class PdfCreator {
                 InContent.add(new InText(line.endsWith(" ")? line : line+" "));
             }
         }
+        // Add an .paragraph after every .indent (except for the first one)
+        boolean notfirst = false;
+        for(int i=0;i<InContent.size();++i){
+            InElement nowElement = InContent.get(i);
+            if(nowElement.isCommand() && nowElement.getContent().startsWith("indent")){
+                if(notfirst){
+                    InContent.add(i+1,new InCommand("paragraph"));
+                }
+                else {
+                    notfirst = true;
+                }
+            }
+        }
+        //change the sequence of .paragraph
+        int count=0;
+        int nowText = findNextText(count,InContent);
+        int nowPara = findNextPara(count,InContent);
+        while(count<InContent.size()){
+            if(nowPara<nowText){
+                InElement temp = InContent.get(nowPara);
+                InContent.set(nowPara,InContent.get(count));
+                InContent.set(count,temp);
+            }
+            count=nowText+1;
+            if(count>=InContent.size()){
+                break;
+            }
+            if(InContent.get(count).isCommand() && InContent.get(count).getContent().equals("paragraph")){
+                count++;
+                if(count>=InContent.size()){
+                    break;
+                }
+            }
+            nowText = findNextText(count,InContent);
+            nowPara = findNextPara(count,InContent);
+        }
+
     }
 
     public void render(ArrayList<InElement> InContent, Document document){
@@ -91,7 +128,7 @@ public class PdfCreator {
                 return i;
             }
         }
-        throw new IndexOutOfBoundsException();
+        return elements.size();
     }
     public int findNextPara(int nowcount, ArrayList<InElement> elements){
         for(int i=nowcount;i<elements.size();++i){
@@ -99,7 +136,7 @@ public class PdfCreator {
                 return i;
             }
         }
-        throw new IndexOutOfBoundsException();
+        return elements.size();
     }
 
     public void solveCommand(InElement command, Text text,Paragraph paragraph){
@@ -126,7 +163,7 @@ public class PdfCreator {
             text.setFont(NORMAL);
         }
         else if(content.startsWith("indent")){
-            Integer indent = Integer.parseInt(content.substring(8));
+            int indent = Integer.parseInt(content.substring(8));
             if(content.charAt(7)=='+'){
                 nowIndent+=indent;
             }
