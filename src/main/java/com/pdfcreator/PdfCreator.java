@@ -22,20 +22,24 @@ public class PdfCreator {
     public static PdfFont BOLD;
     public static PdfFont ITALIC;
     public static PdfFont BOLD_ITALIC;
-    public static Integer nowIndent = 0;
+    public Integer nowIndent;
 
     private File orig;
     private File dest;
-    public PdfCreator(String dest, String orig){
+    public PdfCreator(String dest, String orig) throws IOException {
         this.dest = new File(dest);
         this.orig = new File(orig);
+        NORMAL = PdfFontFactory.createFont(FontConstants.TIMES_ROMAN);
+        BOLD = PdfFontFactory.createFont(FontConstants.TIMES_BOLD);
+        ITALIC = PdfFontFactory.createFont(FontConstants.TIMES_ITALIC);
+        BOLD_ITALIC = PdfFontFactory.createFont(FontConstants.TIMES_BOLDITALIC);
+        nowIndent=0;
     }
     public static void main(String[] args) throws IOException {
         PdfCreator thisCreator = new PdfCreator("Output/result.pdf","Input/filein.txt");
         thisCreator.createPDF();
     }
     public void createPDF() throws IOException {
-        init();
         ArrayList<InElement> InContent = new ArrayList<>();
         readin(InContent);
         PdfWriter writer = new PdfWriter(dest);
@@ -44,12 +48,7 @@ public class PdfCreator {
         render(InContent,document);
         document.close();
     }
-    public void init() throws IOException {
-        NORMAL = PdfFontFactory.createFont(FontConstants.TIMES_ROMAN);
-        BOLD = PdfFontFactory.createFont(FontConstants.TIMES_BOLD);
-        ITALIC = PdfFontFactory.createFont(FontConstants.TIMES_ITALIC);
-        BOLD_ITALIC = PdfFontFactory.createFont(FontConstants.TIMES_BOLDITALIC);
-    }
+
     public void readin(ArrayList<InElement> InContent) throws FileNotFoundException {
         Scanner sca = new Scanner(this.orig);
         while(sca.hasNext()){
