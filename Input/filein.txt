@@ -16,5 +16,4 @@ pdf document, and the output is formatted really well. While this paragraph is n
 Well that was
 .bold
 exciting
-.regular
 , good luck!

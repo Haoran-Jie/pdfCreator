@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f9184cd-48de-4af3-a83f-ed526ad10f63" name="Changes" comment="Modified readin function to cope with assumptions specified in the README file">
+    <list default="true" id="7f9184cd-48de-4af3-a83f-ed526ad10f63" name="Changes" comment="resolved indentation problem with default margin and setmargin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/filein.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Input/filein.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Output/result.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Output/result.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pdfcreator/PdfCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdfcreator/PdfCreator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,18 +30,21 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2IbZ5baqBptg2kUMnknroEl5dpF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="PdfCreator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pdfcreator.PdfCreator" />
@@ -92,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670623714641</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="resolved indentation problem with default margin and setmargin">
+      <created>1670624904632</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1670624904632</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,9 +117,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Project init" />
     <MESSAGE value="README FILE added assumptions" />
     <MESSAGE value="Modified readin function to cope with assumptions specified in the README file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified readin function to cope with assumptions specified in the README file" />
+    <MESSAGE value="resolved indentation problem with default margin and setmargin" />
+    <option name="LAST_COMMIT_MESSAGE" value="resolved indentation problem with default margin and setmargin" />
   </component>
 </project>
